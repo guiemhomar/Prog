@@ -5,6 +5,7 @@
 package pkgfinal.pkg2;
 
 import java.util.List;
+import java.util.ArrayList;
 
 public class personaje {
     private String nombre;
@@ -14,7 +15,12 @@ public class personaje {
     public personaje (String nombre, int vida, List<cartas> mazo) {
         this.nombre = nombre;
         this.vida = vida;
-        this.mazo = mazo;
+        this.mazo = new ArrayList<>();
+
+        mazo.add(new cartas("Ataque", cartas.CartaTipo.ATAQUE, 10));
+        mazo.add(new cartas("Cura", cartas.CartaTipo.CURA, 5));
+        mazo.add(new cartas("Aturdir", cartas.CartaTipo.ATURDIR, 0));
+
     }
 
     public String getNombre() {
